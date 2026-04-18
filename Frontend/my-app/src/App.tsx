@@ -88,6 +88,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#0d0d12] via-[#1a1025] to-[#0d0d12]">
+      <Analytics />
       {/* Ambient BG */}
       <div className="fixed inset-0 pointer-events-none">
         <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-[120px] opacity-20 bg-purple-600" />
@@ -97,7 +98,6 @@ export default function App() {
       {/* Header */}
       <header className="relative border-b border-[#2a2a3a] bg-[#14141a]/80 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-          <Analytics />
           <div className="flex items-center gap-3">
             <div className="relative">
               <Swords size={22} className="text-purple-400" />

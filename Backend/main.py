@@ -167,13 +167,15 @@ def mock_predict(radiant: List[int], dire: List[int], model_key: str) -> float:
 # ── App Setup ─────────────────────────────────────────────────
 app = FastAPI(
     title="Dota 2 Match Predictor API",
-    description="Predicts Dota 2 pro match outcomes using 3 ML models trained on 2023–2026 data.",
+    description="Predicts Dota 2 pro match outcomes using 4 ML models trained on 2023–2026 data.",
     version="1.0.0"
 )
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://robot-skie.vercel.app/"],
+    allow_origins=[
+        "https://robot-skie.vercel.app/"
+        ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
