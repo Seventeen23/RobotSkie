@@ -205,7 +205,7 @@ export default function App() {
               <div className="section-title">Support the Project</div>
               <div className="w-32 h-32 rounded-lg border border-[#2a2a3a] bg-[#0d0d12] flex items-center justify-center overflow-hidden">
                 <img 
-                  src="/qr-code.png" 
+                  src="/qr.jpeg" 
                   alt="Donation QR Code" 
                   className="w-full h-full object-contain"
                   onError={(e) => {
