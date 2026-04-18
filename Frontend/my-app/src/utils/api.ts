@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:8000"
+const BASE_URL = "https://robotskie.onrender.com"
 
 const handleResponse = async (res: Response) => {
   if (!res.ok) {
