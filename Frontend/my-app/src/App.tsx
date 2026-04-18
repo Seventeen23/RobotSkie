@@ -7,6 +7,7 @@ import ModelInfoPanel from './ModelInfoPanel'
 import TeamSelector from './TeamSelector'
 import { fetchHeroes, fetchModels, fetchTeams, predict, healthCheck } from './utils/api'
 import type { Hero, PredictionResponse, ModelsResponse, TeamsResponse, Team } from './types'
+import { Analytics } from '@vercel/analytics/next';
 
 export default function App() {
   const [heroes, setHeroes]           = useState<Hero[]>([])
@@ -95,6 +96,7 @@ export default function App() {
 
       {/* Header */}
       <header className="relative border-b border-[#2a2a3a] bg-[#14141a]/80 backdrop-blur-sm">
+        <Analytics />
         <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="relative">
