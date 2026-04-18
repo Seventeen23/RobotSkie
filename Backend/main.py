@@ -440,6 +440,9 @@ HERO_DATA = [
     {"id": 136, "name": "Marci", "roles": ["Carry", "Support", "Disabler", "Initiator", "Durable"], "attr": "str"},
     {"id": 137, "name": "Primal Beast", "roles": ["Carry", "Durable", "Initiator", "Disabler", "Nuker"], "attr": "str"},
     {"id": 138, "name": "Muerta", "roles": ["Carry", "Support", "Disabler", "Nuker"], "attr": "int"},
+    {"id": 139, "name": "Ringmaster", "roles": ["Support", "Disabler", "Escape", "Nuker"], "attr": "int"},
+    {"id": 140, "name": "Kez", "roles": ["Carry", "Escape", "Disabler"], "attr": "agi"},
+    {"id": 141, "name": "Largo", "roles": ["Support", "Disabler", "Durable"], "attr": "str"},
 ]
 
 if __name__ == "__main__":
