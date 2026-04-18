@@ -18,7 +18,7 @@ BASE_DIR   = Path(__file__).parent
 MODELS_DIR = BASE_DIR / "models"
 META_PATH  = MODELS_DIR / "metadata.json"
 
-MODELS_DIRS = [BASE_DIR / "models_w_synergy", MODELS_DIR]
+MODELS_DIRS = [BASE_DIR / "models", MODELS_DIR]
 
 # ── Global state ──────────────────────────────────────────────
 models   = {}

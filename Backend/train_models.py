@@ -10,6 +10,7 @@ Models:
   1. Random Forest
   2. XGBoost
   3. Neural Network (MLP)
+  4. LightGBM
 
 Run:
   python train_models.py
@@ -27,6 +28,7 @@ from sklearn.neural_network import MLPClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, roc_auc_score
 import xgboost as xgb
+import lightgbm as lgb
 
 from data_loader import build_dataset
 
@@ -110,6 +112,42 @@ def train_all(X_train, X_test, y_train, y_test) -> dict:
     print(f"   Iterations run: {mlp.n_iter_}")
     joblib.dump(mlp, MODELS_DIR / "neural_network.joblib")
     results["neural_network"] = {"accuracy": acc, "auc": auc}
+
+        # ── 4. LightGBM ───────────────────────────────────────────
+    print("\n💡 Training LightGBM...")
+
+    lgb_model = lgb.LGBMClassifier(
+        n_estimators=800,
+        learning_rate=0.01,
+        num_leaves=64,
+        max_depth=-1,
+        subsample=0.8,
+        colsample_bytree=0.6,
+        random_state=42,
+        class_weight="balanced",
+    )
+
+    lgb_model.fit(
+        X_train,
+        y_train,
+        eval_set=[(X_test, y_test)],
+        eval_metric="auc",
+    )
+
+    lgb_proba = lgb_model.predict_proba(X_test)[:, 1]
+    lgb_pred  = (lgb_proba >= 0.5).astype(int)
+
+    acc = accuracy_score(y_test, lgb_pred)
+    auc = roc_auc_score(y_test, lgb_proba)
+
+    print(f"   Accuracy: {acc:.4f}   AUC-ROC: {auc:.4f}")
+
+    joblib.dump(lgb_model, MODELS_DIR / "lightgbm.joblib")
+
+    results["lightgbm"] = {
+        "accuracy": acc,
+        "auc": auc
+    }
 
     return results
 
