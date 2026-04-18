@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-dark: #0d0d12;
+  --color-bg-card: #14141a;
+  --color-bg-card-hover: #1a1a22;
+  --color-border: #2a2a3a;
+  --color-border-bright: #3d3d55;
+  --color-text-primary: #e8e6f0;
+  --color-text-secondary: #9896a8;
+  --color-text-muted: #5c5868;
+  --color-purple-primary: #a855f7;
+  --color-purple-bright: #c084fc;
+  --color-purple-dim: #7c3aed;
+  --color-accent: #22d3ee;
+  --color-success: #34d399;
+  --color-danger: #f87171;
+}
+
+:root {
+  --bg-dark: #0d0d12;
+  --bg-card: #14141a;
+  --bg-card-hover: #1a1a22;
+  --border: #2a2a3a;
+  --border-bright: #3d3d55;
+  --text-primary: #e8e6f0;
+  --text-secondary: #9896a8;
+  --text-muted: #5c5868;
+  --purple-primary: #a855f7;
+  --purple-bright: #c084fc;
+  --purple-dim: #7c3aed;
+  --purple-glow: rgba(168, 85, 247, 0.4);
+  --accent: #22d3ee;
+  --success: #34d399;
+  --danger: #f87171;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(135deg, var(--bg-dark) 0%, #1a1025 50%, var(--bg-dark) 100%);
+  min-height: 100vh;
+  color: var(--text-primary);
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.glass-card {
+  background: rgba(20, 20, 26, 0.8);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+}
+
+.section-title {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--purple-bright);
+}
