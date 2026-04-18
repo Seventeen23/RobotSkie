@@ -174,7 +174,7 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "https://robot-skie.vercel.app/"
+        "https://robot-skie.vercel.app"
         ],
     allow_credentials=True,
     allow_methods=["*"],
